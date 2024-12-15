@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c817w1plbub6k"]
+
+[ext_resource type="Texture2D" uid="uid://6xunsj6yb2uo" path="res://assets/sprites and textures/arrow buttons/Up button.png" id="1_vqulx"]
+[ext_resource type="Texture2D" uid="uid://byroxkmg3pywo" path="res://assets/sprites and textures/arrow buttons/Up button pressed.png" id="2_0vqbw"]
+[ext_resource type="Texture2D" uid="uid://v335w40ca1er" path="res://assets/sprites and textures/arrow buttons/Down button.png" id="3_67m6v"]
+[ext_resource type="Texture2D" uid="uid://b2xibmay2of0t" path="res://assets/sprites and textures/arrow buttons/Down button pressed.png" id="4_68a2k"]
+
+[node name="ArrowButtons" type="Node2D"]
+position = Vector2(999, 165)
+scale = Vector2(0.759409, 0.768091)
+
+[node name="up arrow button" type="TouchScreenButton" parent="."]
+texture_normal = ExtResource("1_vqulx")
+texture_pressed = ExtResource("2_0vqbw")
+action = "move_up"
+
+[node name="down arrow button" type="TouchScreenButton" parent="."]
+position = Vector2(-10.5345, 338.502)
+scale = Vector2(1, 0.921172)
+texture_normal = ExtResource("3_67m6v")
+texture_pressed = ExtResource("4_68a2k")
+action = "move_down"

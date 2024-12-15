@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo12f105v8m6b"]
+
+[ext_resource type="Texture2D" uid="uid://ne46dj86645b" path="res://assets/sprites and textures/Main menu background.png" id="1_sbthk"]
+
+[node name="AllActions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2066.0
+offset_bottom = 1157.0
+texture = ExtResource("1_sbthk")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -1.0
+offset_right = 715.0
+offset_bottom = 346.0
+scale = Vector2(2.95595, 3.34475)
+text = "All actions
+To move forward, back, left and right: Use WASD keys
+To move up and down: the up arrow key and the down arrow key
+to rotate the camera : use the right mouse button and then move the mouse around to
+rotate.
+
+Note: All this actions can be done with touchscreen as well"
+horizontal_alignment = 1

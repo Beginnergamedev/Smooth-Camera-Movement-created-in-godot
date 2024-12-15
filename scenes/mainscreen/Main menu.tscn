@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://ch6dxtm4ht14x"]
+
+[ext_resource type="Script" path="res://assets/scripts/main_menu.gd" id="1_1xcst"]
+[ext_resource type="Texture2D" uid="uid://ne46dj86645b" path="res://assets/sprites and textures/Main menu background.png" id="1_srix7"]
+[ext_resource type="Texture2D" uid="uid://dny7callrx8c" path="res://assets/sprites and textures/Main menu buttons/PlayButton.png" id="2_n07uk"]
+[ext_resource type="Texture2D" uid="uid://bip7b38elt71s" path="res://assets/sprites and textures/Main menu buttons/PlayButton pressed.png" id="3_q4nlj"]
+[ext_resource type="Texture2D" uid="uid://rdhmf3dotfsw" path="res://assets/sprites and textures/Main menu buttons/Exit button.png" id="4_a3ek0"]
+[ext_resource type="Texture2D" uid="uid://b828l2d84mlum" path="res://assets/sprites and textures/Main menu buttons/Exit button pressed.png" id="5_b4vs3"]
+[ext_resource type="Texture2D" uid="uid://7e8da8rudkuj" path="res://assets/sprites and textures/Main menu buttons/Actions button.png" id="6_sgw21"]
+[ext_resource type="Texture2D" uid="uid://dog0844lpmv61" path="res://assets/sprites and textures/Main menu buttons/Actions button pressed.png" id="7_x6bio"]
+[ext_resource type="PackedScene" uid="uid://bo12f105v8m6b" path="res://scenes/mainscreen/All actions.tscn" id="8_l5p6s"]
+[ext_resource type="Texture2D" uid="uid://p3un0xc47fsn" path="res://assets/sprites and textures/Main menu buttons/Backbutton.png" id="9_kf14s"]
+[ext_resource type="Texture2D" uid="uid://clxasan0psrq1" path="res://assets/sprites and textures/Main menu buttons/Backbutton pressed.png" id="10_hamoo"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1xcst")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2071.0
+offset_bottom = 1143.0
+texture = ExtResource("1_srix7")
+
+[node name="buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="TextureButton" parent="buttons"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 106.0
+offset_right = 1817.0
+offset_bottom = 1123.0
+scale = Vector2(0.431105, 0.411305)
+texture_normal = ExtResource("2_n07uk")
+texture_pressed = ExtResource("3_q4nlj")
+
+[node name="ExitButton" type="TextureButton" parent="buttons"]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 467.0
+offset_right = 1804.0
+offset_bottom = 1484.0
+scale = Vector2(0.463845, 0.445138)
+texture_normal = ExtResource("4_a3ek0")
+texture_pressed = ExtResource("5_b4vs3")
+
+[node name="Actions button" type="TextureButton" parent="buttons"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 608.0
+offset_right = 1812.0
+offset_bottom = 1808.0
+scale = Vector2(0.751105, 0.786517)
+texture_normal = ExtResource("6_sgw21")
+texture_pressed = ExtResource("7_x6bio")
+
+[node name="AllActions" parent="." instance=ExtResource("8_l5p6s")]
+visible = false
+layout_mode = 1
+
+[node name="Back Button" type="TextureButton" parent="AllActions"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 618.0
+offset_right = 515.0
+offset_bottom = 1130.0
+texture_normal = ExtResource("9_kf14s")
+texture_pressed = ExtResource("10_hamoo")
+
+[connection signal="pressed" from="buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="buttons/Actions button" to="." method="_on_actions_button_pressed"]
+[connection signal="pressed" from="AllActions/Back Button" to="." method="_on_back_button_pressed"]
